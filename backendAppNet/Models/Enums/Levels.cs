@@ -2,6 +2,6 @@
 {
     public enum Levels
     {
-        Essential, Intermediate, Advanced
+        Essential, Intermediate, Advanced, Expert
     }
 }
