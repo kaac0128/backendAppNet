@@ -11,6 +11,8 @@ builder.Services.AddDbContext<UniversityDBContext>(options => options.UseSqlServ
 
 // Add services to the container.
 
+//TODO: builder.Services.AddJwtTokenService(builder.Configuration);
+
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<IStudentsService, StudentsService>();
