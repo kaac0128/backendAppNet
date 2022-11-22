@@ -75,6 +75,12 @@ namespace LinqSnippets
             var uniqueDefaultElements = textLis.SingleOrDefault();
         }
 
-        
+        static public IEnumerable<T> GetPage<T>(IEnumerable<T> collection, int pageNumber, int resultPerPage)
+        {
+            int startIndex = (pageNumber - 1) * resultPerPage;
+            return collection.Skip(startIndex).Take(resultPerPage);
+        }
+
+
     }
 }

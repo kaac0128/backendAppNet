@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using backendAppNet.DataAccess;
 using backendAppNet.Models.DataModels;
+using backendAppNet.Services;
 
 namespace backendAppNet.Controllers
 {
@@ -16,9 +17,12 @@ namespace backendAppNet.Controllers
     {
         private readonly UniversityDBContext _context;
 
-        public StudentsController(UniversityDBContext context)
+        private readonly IStudentsService _studebtsSevice;
+
+        public StudentsController(UniversityDBContext context, IStudentsService studentsService)
         {
             _context = context;
+            _studebtsSevice = studentsService;
         }
 
         // GET: api/Students
@@ -104,5 +108,7 @@ namespace backendAppNet.Controllers
         {
             return _context.Students.Any(e => e.Id == id);
         }
+
+
     }
 }
