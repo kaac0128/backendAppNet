@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using backendAppNet.Models.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace backendAppNet.Models.DataModels
 {
@@ -12,5 +13,7 @@ namespace backendAppNet.Models.DataModels
         public string Email { get; set; } = string.Empty;
         [Required]
         public string Password { get; set; } = string.Empty;
+        [Required]
+        public Roles Roles { get; set; } = Roles.User;
     }
 }

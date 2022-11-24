@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using backendAppNet.DataAccess;
 using backendAppNet.Models.DataModels;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 
 namespace backendAppNet.Controllers
 {
@@ -45,6 +47,7 @@ namespace backendAppNet.Controllers
         // PUT: api/Courses/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrator")]
         public async Task<IActionResult> PutCourses(int id, Courses courses)
         {
             if (id != courses.Id)
@@ -76,6 +79,7 @@ namespace backendAppNet.Controllers
         // POST: api/Courses
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrator")]
         public async Task<ActionResult<Courses>> PostCourses(Courses courses)
         {
             _context.Courses.Add(courses);
@@ -86,6 +90,7 @@ namespace backendAppNet.Controllers
 
         // DELETE: api/Courses/5
         [HttpDelete("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrator")]
         public async Task<IActionResult> DeleteCourses(int id)
         {
             var courses = await _context.Courses.FindAsync(id);

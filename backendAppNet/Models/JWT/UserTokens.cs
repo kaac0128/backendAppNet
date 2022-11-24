@@ -1,4 +1,6 @@
-﻿namespace backendAppNet.Models.JWT
+﻿using backendAppNet.Models.Enums;
+
+namespace backendAppNet.Models.JWT
 {
     public class UserTokens
     {
@@ -10,6 +12,7 @@
         public string EmailId { get; set; }
         public Guid GuidId { get; set; }
         public DateTime ExpiredTime { get; set; }
+        public Roles Roles { get; set; }
 
     }
 }

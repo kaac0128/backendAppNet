@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using backendAppNet.DataAccess;
 using backendAppNet.Models.DataModels;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 
 namespace backendAppNet.Controllers
 {
@@ -45,6 +47,7 @@ namespace backendAppNet.Controllers
         // PUT: api/Chapters/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrator")]
         public async Task<IActionResult> PutChapter(int id, Chapter chapter)
         {
             if (id != chapter.Id)
@@ -76,6 +79,7 @@ namespace backendAppNet.Controllers
         // POST: api/Chapters
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrator")]
         public async Task<ActionResult<Chapter>> PostChapter(Chapter chapter)
         {
             _context.Chapters.Add(chapter);
@@ -86,6 +90,7 @@ namespace backendAppNet.Controllers
 
         // DELETE: api/Chapters/5
         [HttpDelete("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrator")]
         public async Task<IActionResult> DeleteChapter(int id)
         {
             var chapter = await _context.Chapters.FindAsync(id);

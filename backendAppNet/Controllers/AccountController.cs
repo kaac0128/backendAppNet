@@ -1,10 +1,12 @@
-﻿using backendAppNet.Helpers;
+﻿using backendAppNet.DataAccess;
+using backendAppNet.Helpers;
 using backendAppNet.Models.DataModels;
 using backendAppNet.Models.JWT;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace backendAppNet.Controllers
 {
@@ -14,9 +16,12 @@ namespace backendAppNet.Controllers
     {
         private readonly JwtSettings _jwtSettings;
 
-        public AccountController(JwtSettings jwtSettings)
+        private readonly UniversityDBContext _context;
+
+        public AccountController(JwtSettings jwtSettings, UniversityDBContext context)
         {
             _jwtSettings = jwtSettings;
+            _context = context;
         }
 
         private IEnumerable<User> Logins = new List<User>()
@@ -43,17 +48,23 @@ namespace backendAppNet.Controllers
             try
             {
                 var Token = new UserTokens();
-                var Valid = Logins.Any(user => user.Name.Equals(userLogins.UserName, StringComparison.OrdinalIgnoreCase));
+                //var Valid = Logins.Any(user => user.Name.Equals(userLogins.UserName, StringComparison.OrdinalIgnoreCase));
+                var Valid = _context.Users.Any(user => user.Email.Equals(userLogins.UserName));
 
                 if (Valid)
                 {
-                    var user = Logins.FirstOrDefault(user => user.Name.Equals(userLogins.UserName, StringComparison.OrdinalIgnoreCase));
+                    var user = _context.Users.FirstOrDefault(user => user.Email.Equals(userLogins.UserName));
+                    if (user.Password != userLogins.Password)
+                    {
+                        return BadRequest("Error password");
+                    }
                     Token = JwtHelpers.GenTokenKey(new UserTokens()
                     {
                         UserName = user.Name,
                         EmailId = user.Email,
                         Id = user.Id,
-                        GuidId = Guid.NewGuid()
+                        GuidId = Guid.NewGuid(),
+                        Roles = user.Roles
 
                     }, _jwtSettings);
                 }
