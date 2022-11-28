@@ -1,4 +1,5 @@
 ﻿using backendAppNet.DataAccess;
+using backendAppNet.Entities;
 using backendAppNet.Helpers;
 using backendAppNet.Models.DataModels;
 using backendAppNet.Models.JWT;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 
 
 namespace backendAppNet.Controllers
@@ -18,10 +20,15 @@ namespace backendAppNet.Controllers
 
         private readonly UniversityDBContext _context;
 
-        public AccountController(JwtSettings jwtSettings, UniversityDBContext context)
+        private readonly IStringLocalizer<AccountController> _stringLocalizer;
+        private readonly IStringLocalizer<SharedResource> _sharedResourceLocalizer;
+
+        public AccountController(JwtSettings jwtSettings, UniversityDBContext context, IStringLocalizer<AccountController> stringLocalizer, IStringLocalizer<SharedResource> sharedResourceLocalizer)
         {
             _jwtSettings = jwtSettings;
             _context = context;
+            _stringLocalizer = stringLocalizer;
+            _sharedResourceLocalizer = sharedResourceLocalizer;
         }
 
         private IEnumerable<User> Logins = new List<User>()
@@ -72,7 +79,13 @@ namespace backendAppNet.Controllers
                 {
                     return BadRequest("Wrong Credentials");
                 }
-                return Ok(Token);
+                var Welcome = _stringLocalizer.GetString("Welcome").Value ?? String.Empty;
+                var responese = new
+                {
+                    Welcome,
+                    Token
+                };
+                return Ok(responese);
 
             }catch(Exception ex)
             {

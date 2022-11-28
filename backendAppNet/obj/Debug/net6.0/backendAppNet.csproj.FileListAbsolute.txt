@@ -263,3 +263,16 @@ C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\
 C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\net6.0\en-US\backendAppNet.resources.dll
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\net6.0\es-ES\backendAppNet.resources.dll
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\net6.0\fr-FR\backendAppNet.resources.dll
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\obj\Debug\net6.0\backendAppNet.Resources.Controllers.AccountController.en-US.resources
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\obj\Debug\net6.0\backendAppNet.Resources.Controllers.AccountController.es-ES.resources
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\obj\Debug\net6.0\backendAppNet.Resources.Controllers.AccountController.fr-FR.resources
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\obj\Debug\net6.0\backendAppNet.Resources.Entities.SharedResource.en-US.resources
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\obj\Debug\net6.0\backendAppNet.Resources.Entities.SharedResource.es-ES.resources
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\obj\Debug\net6.0\backendAppNet.Resources.Entities.SharedResource.fr-FR.resources
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\obj\Debug\net6.0\backendAppNet.csproj.GenerateResource.cache
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\obj\Debug\net6.0\en-US\backendAppNet.resources.dll
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\obj\Debug\net6.0\es-ES\backendAppNet.resources.dll
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\obj\Debug\net6.0\fr-FR\backendAppNet.resources.dll
