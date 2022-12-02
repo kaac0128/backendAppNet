@@ -18,9 +18,12 @@ namespace backendAppNet.Controllers
     {
         private readonly UniversityDBContext _context;
 
-        public CategoriesController(UniversityDBContext context)
+        private readonly ILogger<WeatherForecastController> _logger;
+
+        public CategoriesController(UniversityDBContext context, ILogger<WeatherForecastController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: api/Categories

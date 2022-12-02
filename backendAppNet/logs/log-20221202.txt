@@ -1,0 +1,9 @@
+2022-12-02 00:20:35.850 -05:00 [INF] HTTP POST /api/Account/GetToken responded 400 in 4662.3261 ms
+2022-12-02 00:22:19.348 -05:00 [INF] HTTP POST /api/Account/GetToken responded 200 in 447.0062 ms
+2022-12-02 00:22:38.890 -05:00 [VRB] WeatherForecastController - Get - Trace log level
+2022-12-02 00:22:38.899 -05:00 [DBG] WeatherForecastController - Get - Debug log level
+2022-12-02 00:22:38.905 -05:00 [INF] WeatherForecastController - Get - Info log level
+2022-12-02 00:22:38.909 -05:00 [WRN] WeatherForecastController - Get - Warning log level
+2022-12-02 00:22:38.914 -05:00 [ERR] WeatherForecastController - Get - Error log level
+2022-12-02 00:22:38.919 -05:00 [FTL] WeatherForecastController - Get - Critical log level
+2022-12-02 00:22:38.927 -05:00 [INF] HTTP GET /WeatherForecast responded 200 in 163.3974 ms

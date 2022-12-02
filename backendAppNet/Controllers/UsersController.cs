@@ -18,9 +18,12 @@ namespace backendAppNet.Controllers
     {
         private readonly UniversityDBContext _context;
 
-        public UsersController(UniversityDBContext context)
+        private readonly ILogger<WeatherForecastController> _logger;
+
+        public UsersController(UniversityDBContext context, ILogger<WeatherForecastController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: api/Users
@@ -47,7 +50,7 @@ namespace backendAppNet.Controllers
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrator")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrator, User")]
         public async Task<IActionResult> PutUser(int id, User user)
         {
             if (id != user.Id)
@@ -79,7 +82,7 @@ namespace backendAppNet.Controllers
         // POST: api/Users
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrator")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrator, User")]
         public async Task<ActionResult<User>> PostUser(User user)
         {
             _context.Users.Add(user);

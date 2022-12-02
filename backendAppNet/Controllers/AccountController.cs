@@ -20,15 +20,19 @@ namespace backendAppNet.Controllers
 
         private readonly UniversityDBContext _context;
 
+        private readonly ILogger<WeatherForecastController> _logger;
+
+
         private readonly IStringLocalizer<AccountController> _stringLocalizer;
         private readonly IStringLocalizer<SharedResource> _sharedResourceLocalizer;
 
-        public AccountController(JwtSettings jwtSettings, UniversityDBContext context, IStringLocalizer<AccountController> stringLocalizer, IStringLocalizer<SharedResource> sharedResourceLocalizer)
+        public AccountController(JwtSettings jwtSettings, UniversityDBContext context, IStringLocalizer<AccountController> stringLocalizer, IStringLocalizer<SharedResource> sharedResourceLocalizer, ILogger<WeatherForecastController> logger)
         {
             _jwtSettings = jwtSettings;
             _context = context;
             _stringLocalizer = stringLocalizer;
             _sharedResourceLocalizer = sharedResourceLocalizer;
+            _logger = logger;
         }
 
         private IEnumerable<User> Logins = new List<User>()

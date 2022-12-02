@@ -3,8 +3,16 @@ using backendAppNet.DataAccess;
 using backendAppNet.Services;
 using backendAppNet;
 using Microsoft.OpenApi.Models;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog((hostbuilderCtx, loggerConf) =>
+{
+    loggerConf.WriteTo.Console()
+    .WriteTo.Debug()
+    .ReadFrom.Configuration(hostbuilderCtx.Configuration);
+});
 
 const string CONNECTIONNAME = "UniversityDB";
 var connectionString = builder.Configuration.GetConnectionString(CONNECTIONNAME);
@@ -76,6 +84,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseSerilogRequestLogging();
 
 var supportedCultures = new[] { "en-US", "es-ES", "fr-FR" };
 var localizationOptions = new RequestLocalizationOptions()

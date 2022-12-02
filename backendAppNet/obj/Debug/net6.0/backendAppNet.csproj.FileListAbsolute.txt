@@ -276,3 +276,17 @@ C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\obj\Debug\
 C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\obj\Debug\net6.0\en-US\backendAppNet.resources.dll
 C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\obj\Debug\net6.0\es-ES\backendAppNet.resources.dll
 C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\obj\Debug\net6.0\fr-FR\backendAppNet.resources.dll
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\net6.0\Microsoft.Azure.Services.AppAuthentication.dll
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\net6.0\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\net6.0\Serilog.dll
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\net6.0\Serilog.AspNetCore.dll
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\net6.0\Serilog.Sinks.MSSqlServer.dll
+C:\Users\KAAC1\Documents\.net aprendizaje\backendAppNet\backendAppNet\bin\Debug\net6.0\Serilog.Sinks.PeriodicBatching.dll

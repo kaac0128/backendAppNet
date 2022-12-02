@@ -21,10 +21,13 @@ namespace backendAppNet.Controllers
 
         private readonly IStudentsService _studebtsSevice;
 
-        public StudentsController(UniversityDBContext context, IStudentsService studentsService)
+        private readonly ILogger<WeatherForecastController> _logger;
+
+        public StudentsController(UniversityDBContext context, IStudentsService studentsService, ILogger<WeatherForecastController> logger)
         {
             _context = context;
             _studebtsSevice = studentsService;
+            _logger = logger;
         }
 
         // GET: api/Students

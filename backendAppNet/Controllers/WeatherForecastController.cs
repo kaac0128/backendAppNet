@@ -24,6 +24,13 @@ namespace backendAppNet.Controllers
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrator, User")]
         public IEnumerable<WeatherForecast> Get()
         {
+            _logger.LogTrace($"{nameof(WeatherForecastController)} - {nameof(Get)} - Trace log level");
+            _logger.LogDebug($"{nameof(WeatherForecastController)} - {nameof(Get)} - Debug log level");
+            _logger.LogInformation($"{nameof(WeatherForecastController)} - {nameof(Get)} - Info log level");
+            _logger.LogWarning($"{nameof(WeatherForecastController)} - {nameof(Get)} - Warning log level");
+            _logger.LogError($"{nameof(WeatherForecastController)} - {nameof(Get)} - Error log level");
+            _logger.LogCritical($"{nameof(WeatherForecastController)} - {nameof(Get)} - Critical log level");
+
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
